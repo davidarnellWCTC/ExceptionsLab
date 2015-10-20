@@ -19,7 +19,9 @@ public class NameService {
      * @return the last name
      */
     public String extractLastName(String fullName) {
-        
+        if(fullName == null || fullName.length() < 1 || fullName.trim().isEmpty() ){
+            throw new IllegalArgumentException("The name is empty. Please enter a name");
+        }
         String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
     }
