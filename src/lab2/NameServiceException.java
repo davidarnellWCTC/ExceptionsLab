@@ -16,6 +16,9 @@ public class NameServiceException extends Exception{
     InputOutputGui iog = new InputOutputGui();
     
     String exception;
+    
+    // should use this instead
+    private static final String MSG = "Error message";
 
     // Class constructor with no data
 //    public NameServiceException() {

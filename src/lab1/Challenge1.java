@@ -27,10 +27,18 @@ public class Challenge1 {
         JOptionPane.showMessageDialog(null, msg);
     }
     
-    public String extractLastName(String fullName) {
+    /**
+     * Attempts to extract the last name from the full name.
+     * cannot guarantee the last name is extracted.
+     * checks for empty strings, null, or all spaces
+     * @param fullName - String containing the first and last name
+     * @return
+     * @throws IllegalArgumentException 
+     */
+    public String extractLastName(String fullName) throws IllegalArgumentException {
         // Names can contain numbers and symbols
         // ÄÑÄµ and the symbol Prince turned his name into are all valid
-        if(fullName == null || fullName.length() < 1 || fullName.trim().isEmpty() ){
+        if(fullName == null || fullName.length() < 3 || fullName.trim().isEmpty() ){
             throw new IllegalArgumentException("The name is empty. Please enter a name");
         }
         String[] nameParts = fullName.split(" ");
