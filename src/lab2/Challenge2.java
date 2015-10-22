@@ -12,7 +12,9 @@ package lab2;
  */
 public class Challenge2 {
 
-    public static void main(String[] args) {
+    // I thought this lab required a custom exception class similar to lab3
+    // I was unable to remove the exceptions without causing errors
+    public static void main(String[] args) throws NameServiceException {
         
         new InputOutputGui().startConversation();
     }

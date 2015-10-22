@@ -1,0 +1,65 @@
+Parking Garage App Nouns
+
+This file contains a list of the Nouns associated with the Parking Garage App
+
+The nouns will also have their single responsibility and the information they need
+
+
+   
+
+
+→ Fee Calculator Strategy
+The FeeCalculatorStrategy will be an interface class
+The fee calculators will extend this class.
+This alows for Liskov substitution and for dependancy towards an interface
+
+→ MinimumWithMaximumFeeCalculator
+The MinimumWithMaximumFeeCalculator calculate a fee with a minimum and maximum payment
+The class will be created with constructors that allow the changing of the fee rates
+when the object is created from the startup class.
+There will also be a constructor allowing for the only input being "the hours parked
+per car and the date and time the car entered" per the project requirements.
+-minFee //the default will be 2.00
+-maxFee //the default will be 10.00
+-minHours //default at 3.0 hours
+-chargePerHour //default is 0.50
+-maxHours //24
+
+→ MinimumNoMaximumFeeCalculator
+The MinimumNoMaximumFeeCalculator calculate a fee with a minimum and no maximum payment
+The class will be created with constructors that allow the changing of the fee rates
+when the object is created from the startup class.
+There will also be a constructor allowing for the only input being "the hours parked
+per car and the date and time the car entered" per the project requirements.
+-minFee //the default will be 1.50
+-maxFee //the default will be 0
+-minHours //default at 2.0 hours
+-chargePerHour //default is 0.75
+-maxHours //24
+-parkingFee
+
+→ ParkingReceipt
+The parking receipt will be created by the startup class and will be initialized
+with the time the car enters the garage and a receipt ID. The enter time will
+allow the total parked hours to be calculated and the receiptId will allow the
+receipt to be looked up for future reference and it will allow other receipts to 
+be created before this receipt has been completed. This means multiple cars can 
+be parked and leave the garage in different orders. 
+-timeEntered // Will be calculated using Military Time
+-timeLeft // Will be calculated using Military Time
+-parkingFee
+-carId // used as the receiptId
+
+→ ParkingGarageTotalParkingCalculator
+This class is responsible for calculating the totals for the parked hours and the
+collected fees for the garage owner. The fees, hours, and output are taken care of
+in other classes.
+
+→ OutputStrategy
+Each output will extend from this output strategy interface
+-print()// the output will be interchangable based on the print() method
+
+→ OutputToConsole
+This will extend from the OutputStrategy. This class will receive a String[] array
+and print() the elements to separate lines. This can be used for the receipt and for
+the information requested by the garage owner.

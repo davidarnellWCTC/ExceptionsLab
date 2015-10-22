@@ -13,6 +13,25 @@ public class NameServiceException extends Exception{
     
     // holds exceptions from the NameService
     
+    InputOutputGui iog = new InputOutputGui();
+    
+    String exception;
+
+    // Class constructor with no data
+//    public NameServiceException() {
+//        //exception = "Incorrect input";
+//        //iog.nameSerivceException(exception);
+//    }
+    
+    
+
+    public NameServiceException(String exception) throws NameServiceException {
+        this.exception = exception;
+        iog.nameSerivceException(exception);
+        iog.startConversation();
+    }
+    
+    
     
     
 }

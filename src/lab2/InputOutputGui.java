@@ -16,14 +16,22 @@ public class InputOutputGui {
         nameService = new NameService();
     }
 
-    public void startConversation() {
+    public void startConversation() throws NameServiceException {
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
         String lastName = "";
         lastName = nameService.extractLastName(fullName);
   
         String msg = "Your last name is: " + lastName;
-        JOptionPane.showMessageDialog(null, msg);
+        JOptionPane.showMessageDialog(null, msg);        
+    }
+    
+    public void nameSerivceException(String e){
+        // Exceptions are thrown to this method
+        // The exception text is sent to the JOptionPane output in this class
+        // Output is the responsibility of this class
+        String exception = e;        
+        JOptionPane.showMessageDialog(null, e);
         
     }
      
