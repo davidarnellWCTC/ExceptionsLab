@@ -26,13 +26,13 @@ public class InputOutputGui {
         JOptionPane.showMessageDialog(null, msg);        
     }
     
-    public void nameSerivceException(String e){
-        // Exceptions are thrown to this method
-        // The exception text is sent to the JOptionPane output in this class
-        // Output is the responsibility of this class
-        String exception = e;        
-        JOptionPane.showMessageDialog(null, e);
-        
-    }
+//    public void nameSerivceException(String e){
+//        // Exceptions are thrown to this method
+//        // The exception text is sent to the JOptionPane output in this class
+//        // Output is the responsibility of this class
+//        String exception = e;        
+//        JOptionPane.showMessageDialog(null, e);
+//        
+//    }
      
 }
