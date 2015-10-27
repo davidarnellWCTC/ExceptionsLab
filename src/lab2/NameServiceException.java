@@ -18,20 +18,27 @@ public class NameServiceException extends Exception{
     String exception;
     
     // should use this instead
-    private static final String MSG = "Error message";
+    private static final String MSG = "Please enter a valid name.";
 
-    // Class constructor with no data
-//    public NameServiceException() {
-//        //exception = "Incorrect input";
-//        //iog.nameSerivceException(exception);
-//    }
-    
-    
 
-    public NameServiceException(String exception) throws NameServiceException {
-        this.exception = exception;
-        iog.nameSerivceException(exception);
-        iog.startConversation();
+    public NameServiceException() {
+    }
+
+    public NameServiceException(String string) {        
+        super(MSG);
+        System.out.println(string);
+    }
+
+    public NameServiceException(String string, Throwable thrwbl) {
+        super(MSG, thrwbl);
+    }
+
+    public NameServiceException(Throwable thrwbl) {
+        super(MSG);
+    }
+
+    public NameServiceException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
+        super(MSG, thrwbl, bln, bln1);
     }
     
     
