@@ -11,11 +11,11 @@ package lab2;
  */
 public class NameServiceException extends Exception{
     
-    // holds exceptions from the NameService
+    //ons from the NameService
     
-    InputOutputGui iog = new InputOutputGui();
+    //InputOutputGui iog = new InputOutputGui();
     
-    String exception;
+    //String exception;
     
     // should use this instead
     private static final String MSG = "Please enter a valid name.";
@@ -24,9 +24,10 @@ public class NameServiceException extends Exception{
     public NameServiceException() {
     }
 
-    public NameServiceException(String string) {        
+    public NameServiceException(String string) {
+        //this.MSG = string;
         super(MSG);
-        System.out.println(string);
+        //System.out.println(string);
     }
 
     public NameServiceException(String string, Throwable thrwbl) {

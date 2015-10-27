@@ -9,21 +9,43 @@ import javax.swing.JOptionPane;
  * @version 1.00
  */
 public class InputOutputGui {
-    // handle exception here
+    // display exception here
     private NameService nameService;
+    // moving the lastName outside the method
+    private String lastName = "";
 
     public InputOutputGui() {
         nameService = new NameService();
     }
 
-    public void startConversation() throws NameServiceException {
+    public void startConversation() { //throws NameServiceException {
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
-        String lastName = "";
-        lastName = nameService.extractLastName(fullName);
+        //String lastName = "";
+        try {
+            lastName = nameService.extractLastName(fullName);
+        } catch (NameServiceException nse) {
+            JOptionPane.showMessageDialog(null, nse.getMessage());
+        }
+    }
   
         String msg = "Your last name is: " + lastName;
-        JOptionPane.showMessageDialog(null, msg);        
+        JOptionPane.showMessageDialog(null, msg);
+        
+        
+        /*
+        String fullName = JOptionPane.showInputDialog("Enter full name:");
+        String lastName = null;
+        try {
+            lastName = nameService.extractLastName(fullName);
+        } catch(IllegalArgumentException iae) {
+            JOptionPane.showMessageDialog(null, iae.getMessage());
+        }
+        String msg = "Your last name is: " + lastName;
+        JOptionPane.showMessageDialog(null, msg);
+        */
+        
+        
     }
     
 //    public void nameSerivceException(String e){
